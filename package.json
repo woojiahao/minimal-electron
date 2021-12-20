@@ -1,0 +1,14 @@
+{
+  "name": "minimal-electron",
+  "version": "1.0.0",
+  "description": "Minimal Electron setup that works with Typescript, React, Tailwind.CSS, TypeORM, and Webpack",
+  "main": "index.js",
+  "repository": "git@github.com:woojiahao/minimal-electron.git",
+  "author": "woojiahao <woojiahao1234@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^16.0.5",
+    "electron-webpack": "^2.8.2",
+    "webpack": "^5.65.0"
+  }
+}
