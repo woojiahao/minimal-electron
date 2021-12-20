@@ -6,9 +6,15 @@
   "repository": "git@github.com:woojiahao/minimal-electron.git",
   "author": "woojiahao <woojiahao1234@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "electron-webpack dev"
+  },
   "devDependencies": {
     "electron": "^16.0.5",
     "electron-webpack": "^2.8.2",
     "webpack": "^5.65.0"
+  },
+  "dependencies": {
+    "source-map-support": "^0.5.21"
   }
 }
