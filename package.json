@@ -9,6 +9,11 @@
   "scripts": {
     "dev": "electron-webpack dev"
   },
+  "electronWebpack": {
+    "renderer": {
+      "template": "./public/index.html"
+    }
+  },
   "devDependencies": {
     "electron": "^16.0.5",
     "electron-webpack": "^2.8.2",
