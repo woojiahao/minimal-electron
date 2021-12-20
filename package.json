@@ -17,6 +17,8 @@
   "devDependencies": {
     "electron": "^16.0.5",
     "electron-webpack": "^2.8.2",
+    "electron-webpack-ts": "^4.0.1",
+    "typescript": "3.9.10",
     "webpack": "4.46.0"
   },
   "dependencies": {
