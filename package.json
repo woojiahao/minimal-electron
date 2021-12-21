@@ -11,7 +11,8 @@
   },
   "electronWebpack": {
     "renderer": {
-      "template": "./public/index.html"
+      "template": "./public/index.html",
+      "webpackConfig": "webpack.renderer.js"
     }
   },
   "devDependencies": {
@@ -23,6 +24,10 @@
     "css-loader": "5.2.7",
     "electron": "^16.0.5",
     "electron-webpack": "^2.8.2",
+    "node-sass": "6.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass-loader": "10.2.0",
     "style-loader": "2.0.0",
     "typescript": "3.9.10",
     "webpack": "4.46.0"
