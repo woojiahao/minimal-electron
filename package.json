@@ -2,15 +2,32 @@
   "name": "minimal-electron",
   "version": "1.0.0",
   "description": "Minimal Electron setup that works with Typescript, React, Tailwind.CSS, TypeORM, and Webpack",
-  "main": "./src/main/index.ts",
+  "main": "./dist/main.js",
   "repository": "git@github.com:woojiahao/minimal-electron.git",
   "author": "woojiahao <woojiahao1234@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "electron-webpack dev"
+    "dev": "NODE_ENV=development concurrently \"npm run dev:react\" \"npm run dev:electron\"",
+    "dev:react": "webpack-dev-server --config renderer.webpack.config.js --mode development",
+    "dev:electron": "webpack --config main.webpack.config.js --mode development && electron ."
   },
- "devDependencies": {
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
+    "babel-loader": "^8.2.3",
+    "concurrently": "^6.5.1",
+    "electron": "^16.0.5",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
