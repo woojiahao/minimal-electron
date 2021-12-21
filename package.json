@@ -2,37 +2,46 @@
   "name": "minimal-electron",
   "version": "1.0.0",
   "description": "Minimal Electron setup that works with Typescript, React, Tailwind.CSS, TypeORM, and Webpack",
-  "main": "./src/main/index.ts",
+  "main": "./dist/main.js",
   "repository": "git@github.com:woojiahao/minimal-electron.git",
   "author": "woojiahao <woojiahao1234@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "electron-webpack dev"
-  },
-  "electronWebpack": {
-    "renderer": {
-      "template": "./public/index.html",
-      "webpackConfig": "webpack.renderer.js"
-    }
+    "dev": "NODE_ENV=development concurrently \"npm run dev:react\" \"npm run dev:electron\"",
+    "dev:react": "webpack-dev-server --config renderer.webpack.config.js --mode development",
+    "dev:electron": "webpack --config main.webpack.config.js --mode development && electron ."
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.5",
+    "@babel/plugin-proposal-decorators": "^7.16.5",
+    "@babel/plugin-transform-runtime": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
+    "@types/es6-shim": "^0.31.42",
+    "@types/node": "^17.0.2",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
     "babel-loader": "^8.2.3",
-    "css-loader": "5.2.7",
+    "concurrently": "^6.5.1",
+    "css-loader": "^6.5.1",
     "electron": "^16.0.5",
-    "electron-webpack": "^2.8.2",
-    "node-sass": "6.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "sass-loader": "10.2.0",
-    "style-loader": "2.0.0",
-    "typescript": "3.9.10",
-    "webpack": "4.46.0"
+    "html-webpack-plugin": "^5.5.0",
+    "postcss": "^8.4.5",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.0.2",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.0.7",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
-    "source-map-support": "^0.5.21"
+    "dotenv": "^10.0.0",
+    "pg": "^8.7.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.41"
   }
 }
