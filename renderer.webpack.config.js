@@ -24,7 +24,7 @@ module.exports = {
   devServer: {
     static: path.join(__dirname, 'dist', 'renderer.js'),
     historyApiFallback: true,
-    // compress: true,
+    compress: true,
     hot: true,
     port: 4000,
   },

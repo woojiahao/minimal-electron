@@ -1,6 +1,9 @@
 import { app, BrowserWindow } from 'electron';
-import path from 'path';
-import { node } from 'webpack';
+import "reflect-metadata";
+import { setupDatabase } from './database/database';
+require('dotenv').config()
+
+setupDatabase()
 
 let mainWindow: Electron.BrowserWindow | null;
 

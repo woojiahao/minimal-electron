@@ -1,8 +1,12 @@
 const path = require('path')
+const {
+  IgnorePlugin
+} = require('webpack')
 
 module.exports = {
+  mode: 'development',
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   devtool: 'source-map',
   entry: './src/main/index.ts',
@@ -20,4 +24,9 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: 'main.js',
   },
+  plugins: [
+    new IgnorePlugin({
+      resourceRegExp: /^pg-native$/
+    }),
+  ]
 };
